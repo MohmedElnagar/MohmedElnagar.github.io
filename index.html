@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Ahmed El-nagar - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(to right, #1e2749, #3a496b);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        header img:hover {
+            transform: scale(1.1);
+        }
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .animated-icon {
+            display: inline-block;
+            font-size: 2rem;
+            color: #ffcc00;
+            margin-left: 5px;
+            animation: bounce 1.2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allows links to wrap on smaller screens */
+            gap: 15px;
+            margin-top: 20px; /* Adds space above the links */
+        }
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 25px;
+            transition: background-color 0.4s, color 0.4s, transform 0.3s;
+        }
+        .social-links a i {
+            margin-right: 8px;
+        }
+        .social-links a:hover {
+            background-color: white;
+            color: #1e2749;
+            transform: scale(1.05);
+        }
+        section {
+            padding: 60px 0;
+        }
+        h2 {
+            color: #1e2749;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .profile, .skills, .projects, .education {
+            background-color: white;
+            padding: 60px;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+        }
+        .profile:hover, .skills:hover, .projects:hover, .education:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        .skills ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .skills ul li {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: transform 0.3s ease-in-out;
+        }
+        .skills ul li:hover {
+            transform: scale(1.05);
+        }
+        .projects .project {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f0f4ff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out;
+        }
+        .projects .project:hover {
+            transform: translateY(-5px);
+        }
+        .projects a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+        .projects a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        .education p {
+            font-size: 1.2rem;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #1e2749;
+            color: white;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            .title {
+                font-size: 1.3rem;
+            }
+            h2 {
+                font-size: 2rem; /* Adjusting for smaller screens */
+            }
+            .skills ul {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+            .social-links {
+                flex-direction: column; /* Stack links vertically on smaller screens */
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .title {
+                font-size: 1rem;
+            }
+            h2 {
+                font-size: 1.8rem; /* Smaller font for very small screens */
+            }
+            .skills ul {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            .skills ul li {
+                font-size: 1rem;
+                padding: 10px;
+            }
+            .social-links a {
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Section -->
+    <header>
+        <img src="IMG_20230310_012154_642.jpg" alt="Profile Picture">
+        <h1>Mohamed Ahmed El-Nagar</h1>
+        <p class="title">Flutter Developer <span class="animated-icon">🚀</span></p>
+        <nav class="social-links">
+    <a href="https://www.linkedin.com/in/mohamed-elnagar-649a04262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+        <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://github.com/MohmedElnagar">
+        <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="mailto:mohamedelnagaar1111@gmail.com">
+        <i class="fas fa-envelope"></i> Email
+    </a>
+    <a href="tel:+201021606288">
+        <i class="fas fa-phone"></i> +20 01021606288
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=100022771822185&mibextid=ZbWKwL">
+        <i class="fab fa-facebook"></i> Facebook
+    </a>
+    <a href="https://www.instagram.com/mohmedelnagar54/profilecard/?igsh=ZWMyZnU0MzVpNGFv">
+        <i class="fab fa-instagram"></i> Instagram
+    </a>
+</nav>
+
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile">
+        <h2>Profile</h2>
+        <p>
+            Experienced Flutter Developer proficient in Dart programming language with a history of creating high-performance mobile applications. Skilled in state management tools like Bloc, API integration, and Firebase services. Seeking opportunities to apply advanced Flutter technologies in a dynamic, innovative environment.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Data structures | Problem solving | OOP | Clean code | MVVM | Algorithms | Problem solving | SOLID | clean architecture</li>
+            <li>Dart | Flutter | Bloc Pattern | RESTful APIs | Firebase Services | UI/UX Design | Localization</li>
+            <li>Responsive Ui | Animation | Getx | Payment | Google Maps| Hive Database</li>
+        </ul>   
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <p><strong>Vodafone Services:</strong> A mobile app for accessing Vodafone services. <a href="https://github.com/MohmedElnagar/VodafoneService">GitHub</a></p>
+        </div>
+        <div class="project">
+            <p><strong>NoteApp:</strong> A mobile app for note management using a local database. <a href="https://github.com/MohmedElnagar/note_app">GitHub</a></p>
+        </div>
+        <div class="project">
+            <p><strong>BooklyApp:</strong> A collection of free books on computer science and programming. <a href="https://github.com/MohmedElnagar/BooklyApp">GitHub</a></p>
+        </div>
+        <div class="project">
+            <p><strong>Shop App:</strong> A clothing and fashion app for browsing and purchasing items. <a href="https://github.com/MohmedElnagar/Store_App">GitHub</a></p>
+        </div>
+        <div class="project">
+            <p><strong>MusicApp:</strong> A mobile app with three main pages for music browsing. <a href="https://github.com/MohmedElnagar/Music_App">GitHub</a></p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education">
+        <h2>Education</h2>
+        <p>Faculty of Agriculture, Kafr El-Sheikh University - Fourth year student</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 Mohamed Ahmed El-nagar. All rights reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>
